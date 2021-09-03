@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  transaction:
+    rollback-on-commit-failure: true
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hms?serverTimezone=GMT&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: qaz99999
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  consumer:
+    group: DefaultPushConsumer
+    topic: push
+
+  producer:
+    group: DefaultPushProducer
+
+serverName: server1
+pushServerPort: 12345
